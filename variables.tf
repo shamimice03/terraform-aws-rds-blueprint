@@ -1,29 +1,44 @@
 
 variable "create_db_subnet_group" {
-  
+  description = "Whether to create db a subnet group"
+  type        = bool
+  default     = true
 }
+
+variable "db_subnet_group_name" {
+  description = "Name of DB Subnet Group"
+  type        = string
+  default     = null
+}
+
+variable "db_subnets" {
+  description = "List of DB subnets"
+  type        = list(any)
+  default     = []
+}
+
 variable "db_identifier" {
   description = "The name of the DB instance identifier."
   type        = string
-  default     = "test-db-1"
+  default     = null
 }
 
 variable "db_name" {
   description = "The database name"
   type        = string
-  default     = "mydb"
+  default     = null
 }
 
 variable "db_master_username" {
   description = "Master username for database"
   type        = string
-  default     = "Admin"
+  default     = null
 }
 
 variable "db_master_password" {
-  description = "Master password for database."
+  description = "Master password for database"
   type        = string
-  default     = "Shamimice03"
+  default     = null
   sensitive   = true
 }
 
@@ -45,19 +60,19 @@ variable "multi_az" {
 variable "engine" {
   description = "The database engine to be used for the RDS instance."
   type        = string
-  default     = "mysql"
+  default     = null
 }
 
 variable "engine_version" {
   description = "The version of the database engine to be used for the RDS instance."
   type        = string
-  default     = "8.0"
+  default     = null
 }
 
 variable "instance_class" {
   description = "The instance class for the RDS instance."
   type        = string
-  default     = "db.t3.micro"
+  default     = null
 }
 
 variable "storage_type" {
@@ -78,18 +93,6 @@ variable "max_allocated_storage" {
   default     = "10"
 }
 
-variable "db_subnet_group_name" {
-  description = "Name of DB Subnet Group"
-  type        = string
-  default     = "db-subnet-group"
-}
-
-variable "db_subnets" {
-  description = "List of DB subnets"
-  type        = list(any)
-  default     = []
-}
-
 variable "db_security_groups" {
   description = "A list of security group IDs to associate with the DB instance"
   type        = list(string)
@@ -105,25 +108,25 @@ variable "publicly_accessible" {
 variable "database_port" {
   description = "The port on which the DB accepts connections."
   type        = number
-  default     = 3306
+  default     = null
 }
 
 variable "backup_retention_period" {
   description = "The number of days to retain automated backups"
   type        = number
-  default     = 7
+  default     = 0
 }
 
 variable "backup_window" {
   description = "Must not overlap with maintenance_window"
   type        = string
-  default     = "03:00-05:00"
+  default     = null
 }
 
 variable "maintenance_window" {
   description = "The window to perform maintenance in."
   type        = string
-  default     = "Sat:05:00-Sat:07:00"
+  default     = null
 }
 
 variable "deletion_protection" {

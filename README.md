@@ -1,4 +1,5 @@
-create_db_subnet_group = false
+```
+create_db_subnet_group = true
 db_subnet_group_name = "db-subnet-group"
 db_subnets = [
     "subnet-0f5e0a9daf410e661",
@@ -30,3 +31,4 @@ enabled_cloudwatch_logs_exports = ["audit", "error"]
 apply_immediately = true
 delete_automated_backups = true
 skip_final_snapshot = true
+```

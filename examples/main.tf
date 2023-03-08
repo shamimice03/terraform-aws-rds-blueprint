@@ -22,20 +22,20 @@ module "vpc" {
 }
 
 resource "aws_security_group" "rds_security_group" {
-  name_prefix = "rds_sg_"
+  name_prefix = "rds_sg"
   vpc_id      = module.vpc.vpc_id
 
   ingress {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["172.16.0.0/16"]
   }
 
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["172.16.0.0/16"]
   }
 }

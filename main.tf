@@ -1,7 +1,7 @@
 resource "aws_db_subnet_group" "db_subnet_group" {
-  
+  count   = var.create_db_subnet_group ? 1 : 0
   name       = coalesce(var.db_subnet_group_name, var.db_identifier)
-  subnet_ids = module.vpc.db_subnet_id
+  subnet_ids = var.db_subnets
 
   tags = {
     Name = var.db_subnet_group_name
@@ -54,5 +54,9 @@ resource "aws_db_instance" "this" {
   apply_immediately        = var.apply_immediately
   delete_automated_backups = var.delete_automated_backups
   skip_final_snapshot      = var.skip_final_snapshot
+
+  depends_on = [
+    aws_db_subnet_group.db_subnet_group
+  ]
 
 }
