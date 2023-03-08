@@ -8,43 +8,46 @@ resource "aws_db_subnet_group" "db_subnet_group" {
 }
 
 resource "aws_db_instance" "this" {
-  # Settings
+  # Identify DB instanve
   identifier = var.db_identifier
+
+  # Create Initial Databse
+  db_name = var.db_name
+
+  # Credentials Settings
+  username = var.db_master_username
+  password = var.db_master_password
 
   # Availability and durability
   multi_az = var.multi_az
+
+  # Engine options
+  engine         = var.engine
+  engine_version = var.engine_version
+
+  # DB Instance configuration
+  instance_class = var.instance_class
 
   ### Storage
   storage_type          = var.storage_type
   allocated_storage     = var.allocated_storage
   max_allocated_storage = var.max_allocated_storage
 
-
-  # Engine options
-  engine         = var.engine
-  engine_version = var.engine_version
-
-  # Instance configuration
-  instance_class = var.instance_class
-
-
-
-
-  # Credentials Settings
-  username = var.db_master_username
-  password = var.db_master_password
-
   # Connectivity
   db_subnet_group_name   = var.db_subnet_group_name
   vpc_security_group_ids = var.db_security_groups
   publicly_accessible    = var.publicly_accessible
   port                   = var.database_port
-  
-  
-  # Database options
-  db_name = var.db_name
 
+  # Backup and Maintenance
+  db_backup_retention_period = var.db_backup_retention_period
+  backup_window              = var.backup_window
+  maintenance_window         = var.maintenance_window
+  delete_automated_backups   = var.delete_automated_backups
   skip_final_snapshot        = var.skip_final_snapshot
   deletion_protection        = var.deletion_protection
-  db_backup_retention_period = var.db_backup_retention_period
+
+  # Others
+  apply_immediately = true
+
 }

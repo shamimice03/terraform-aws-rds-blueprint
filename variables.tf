@@ -73,6 +73,25 @@ variable "db_backup_retention_period" {
   default     = 7
 }
 
+variable "backup_window" {
+  description = "Must not overlap with maintenance_window"
+  type        = string
+  default     = "03:00-05:00"
+}
+
+variable "maintenance_window" {
+  description = "The window to perform maintenance in."
+  type        = string
+  default     = "Sat:03:00-Sat:05:00"
+}
+
+
+variable "delete_automated_backups" {
+  description = "Specifies whether to remove automated backups immediately after the DB instance is deleted."
+  type        = bool
+  default     = true
+}
+
 variable "deletion_protection" {
   description = "Protect database from accidental deletion"
   type        = bool
@@ -125,6 +144,19 @@ variable "db_master_password" {
   description = "Master password for database."
   type        = string
   default     = "Admin@123"
+  sensitive   = true
 }
 
 
+variable "enabled_cloudwatch_logs_exports" {
+  description = <<DESC
+  Set of log types to enable for exporting to CloudWatch logs. 
+  If omitted, no logs will be exported. Valid values (depending on engine). 
+  MySQL and MariaDB: audit, error, general, slowquery.
+  PostgreSQL: postgresql, upgrade. 
+  MSSQL: agent , error. 
+  Oracle: alert, audit, listener, trace.
+  DESC
+  type        = list(string)
+  default     = []
+}
