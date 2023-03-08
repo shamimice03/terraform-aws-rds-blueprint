@@ -149,14 +149,24 @@ variable "db_master_password" {
 
 
 variable "enabled_cloudwatch_logs_exports" {
-  description = <<DESC
+  description = <<EOF
   Set of log types to enable for exporting to CloudWatch logs. 
   If omitted, no logs will be exported. Valid values (depending on engine). 
   MySQL and MariaDB: audit, error, general, slowquery.
   PostgreSQL: postgresql, upgrade. 
   MSSQL: agent , error. 
   Oracle: alert, audit, listener, trace.
-  DESC
+  EOF
   type        = list(string)
   default     = []
+}
+
+
+variable "iam_database_authentication_enabled" {
+  description = <<EOF
+  Specifies whether or not the mappings of AWS Identity and 
+  Access Management (IAM) accounts to database accounts are enabled
+  EOF
+  type        = bool
+  default     = false
 }
