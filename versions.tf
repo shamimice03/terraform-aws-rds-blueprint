@@ -9,6 +9,6 @@ terraform {
   }
 }
 
-# provider "aws" {
-#   profile = "default"
-# }
+provider "aws" {
+  profile = "terraform-user"
+}
