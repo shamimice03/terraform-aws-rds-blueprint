@@ -34,21 +34,16 @@ resource "aws_db_instance" "this" {
   username = var.db_master_username
   password = var.db_master_password
 
-
+  # Connectivity
+  db_subnet_group_name   = var.db_subnet_group_name
+  vpc_security_group_ids = var.db_security_groups
+  publicly_accessible    = var.publicly_accessible
+  port                   = var.database_port
+  
+  
   # Database options
   db_name = var.db_name
 
-  # Connectivity
-  db_subnet_group_name       = var.db_subnet_group_name
-<<<<<<<<< saved version
-  vpc_security_group_ids     = var.db_security_groups
-  publicly_accessible        = var.publicly_accessible
-=========
-  vpc_security_group_ids = var.db_security_groups
-  publicly_accessible = var.publicly_accessible
-  port = var.database_port
-  
->>>>>>>>> local version
   skip_final_snapshot        = var.skip_final_snapshot
   deletion_protection        = var.deletion_protection
   db_backup_retention_period = var.db_backup_retention_period
