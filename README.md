@@ -35,3 +35,4 @@ skip_final_snapshot = true
 
 ## Create CloudWatch Alarm
 ## SNS Topic
+## Review Cost using Cost manager

@@ -88,9 +88,13 @@ variable "allocated_storage" {
 }
 
 variable "max_allocated_storage" {
-  description = "To enable autosacling, define max_allocated_storage higher than the allocated_storage"
+  description = <<EOF
+  When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance. 
+  Configuring this will automatically ignore differences to allocated_storage. 
+  Must be greater than or equal to allocated_storage or 0 to disable Storage Autoscaling.
+  EOF
   type        = string
-  default     = "10"
+  default     = "0"
 }
 
 variable "db_security_groups" {

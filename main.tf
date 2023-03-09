@@ -8,7 +8,6 @@ resource "aws_db_subnet_group" "db_subnet_group" {
   }
 }
 
-
 resource "aws_db_instance" "this" {
   # Identify DB instance
   identifier = var.db_identifier
@@ -57,8 +56,8 @@ resource "aws_db_instance" "this" {
   skip_final_snapshot      = var.skip_final_snapshot
 
   timeouts {
-    create = "60m"
-    delete = "60m"
-    update = "60m"
+    create = "2h"
+    delete = "2h"
+    update = "2h"
   }
 }
