@@ -11,10 +11,22 @@ variable "db_subnet_group_name" {
   default     = null
 }
 
+variable "db_subnet_group_description" {
+  description = "Description of DB Subnet Group"
+  type        = string
+  default     = null
+}
+
 variable "db_subnets" {
   description = "List of DB subnets"
   type        = list(any)
   default     = []
+}
+
+variable "random_password_length" {
+  description = "Length of the random password"
+  type        = number
+  default     = 16
 }
 
 variable "db_identifier" {

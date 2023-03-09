@@ -77,3 +77,33 @@ output "db_instance_multi_az" {
   description = "Indicates whether the DB instance is configured with Multi-AZ deployment."
   value       = aws_db_instance.this.multi_az
 }
+
+output "db_instance_username" {
+  description = "The master username for the database"
+  value       = aws_db_instance.this.username
+  sensitive   = true
+}
+
+output "db_instance_password" {
+  description = "The database password (this password might be old, because Terraform will not track password after initial creation)"
+  value       = aws_db_instance.this.password
+  sensitive   = true
+}
+
+output "db_subnet_group_subnets" {
+  description = "The IDs of the subnets associated with the subnet group for the created RDS database instance"
+  value       = aws_db_subnet_group.db_subnet_group[0].subnet_ids
+}
+
+output "db_instance_arn" {
+  description = "The arn of RDS instance"
+  value       = aws_db_instance.this.arn
+}
+
+output "db_instance_availability_zone" {
+  description = "The availability zone of the RDS instance"
+  value       = aws_db_instance.this.availability_zone
+}
+
+
+

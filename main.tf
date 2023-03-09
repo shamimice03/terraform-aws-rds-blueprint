@@ -1,11 +1,22 @@
+locals {
+  password = var.db_master_password == null ? random_password.db_master_password[0].result : var.db_master_password
+}
+
 resource "aws_db_subnet_group" "db_subnet_group" {
-  count   = var.create_db_subnet_group ? 1 : 0
-  name       = coalesce(var.db_subnet_group_name, var.db_identifier)
-  subnet_ids = var.db_subnets
+  count       = var.create_db_subnet_group ? 1 : 0
+  name        = coalesce(var.db_subnet_group_name, var.db_identifier)
+  description = coalesce(var.db_subnet_group_description, format("%s-subnet-group", var.db_identifier))
+  subnet_ids  = var.db_subnets
 
   tags = {
     Name = var.db_subnet_group_name
   }
+}
+
+resource "random_password" "db_master_password" {
+  count   = var.db_master_password == null ? 1 : 0
+  length  = var.random_password_length
+  special = true
 }
 
 resource "aws_db_instance" "this" {
@@ -17,7 +28,7 @@ resource "aws_db_instance" "this" {
 
   # Credentials Settings
   username                            = var.db_master_username
-  password                            = var.db_master_password
+  password                            = local.password
   iam_database_authentication_enabled = var.iam_database_authentication_enabled
 
   # Availability and durability
@@ -56,8 +67,8 @@ resource "aws_db_instance" "this" {
   skip_final_snapshot      = var.skip_final_snapshot
 
   timeouts {
-    create = "2h"
-    delete = "2h"
-    update = "2h"
+    create = "60m"
+    delete = "60m"
+    update = "60m"
   }
 }
