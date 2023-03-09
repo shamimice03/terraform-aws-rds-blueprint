@@ -2,7 +2,7 @@
 variable "create_db_subnet_group" {
   description = "Whether to create db a subnet group"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "db_subnet_group_name" {
@@ -168,16 +168,6 @@ variable "skip_final_snapshot" {
   type        = bool
   default     = true
 }
-
-
-
-
-
-# variable "db_parameter_group_name" {
-#   description = "The name of the DB parameter group to use"
-#   type        = string
-# }
-
 
 
 

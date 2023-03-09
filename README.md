@@ -32,3 +32,6 @@ apply_immediately = true
 delete_automated_backups = true
 skip_final_snapshot = true
 ```
+
+## Create CloudWatch Alarm
+## SNS Topic

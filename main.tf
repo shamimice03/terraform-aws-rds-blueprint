@@ -8,11 +8,12 @@ resource "aws_db_subnet_group" "db_subnet_group" {
   }
 }
 
+
 resource "aws_db_instance" "this" {
-  # Identify DB instanve
+  # Identify DB instance
   identifier = var.db_identifier
 
-  # Create Initial Databse
+  # Create Initial Database
   db_name = var.db_name
 
   # Credentials Settings
@@ -27,7 +28,7 @@ resource "aws_db_instance" "this" {
   engine         = var.engine
   engine_version = var.engine_version
 
-  # DB Instance configuration
+  # DB Instance configurations
   instance_class = var.instance_class
 
   ### Storage
@@ -36,7 +37,7 @@ resource "aws_db_instance" "this" {
   max_allocated_storage = var.max_allocated_storage
 
   # Connectivity
-  db_subnet_group_name   = var.db_subnet_group_name
+  db_subnet_group_name   = var.create_db_subnet_group ? aws_db_subnet_group.db_subnet_group[0].id : null
   vpc_security_group_ids = var.db_security_groups
   publicly_accessible    = var.publicly_accessible
   port                   = var.database_port
@@ -55,8 +56,9 @@ resource "aws_db_instance" "this" {
   delete_automated_backups = var.delete_automated_backups
   skip_final_snapshot      = var.skip_final_snapshot
 
-  depends_on = [
-    aws_db_subnet_group.db_subnet_group
-  ]
-
+  timeouts {
+    create = "60m"
+    delete = "60m"
+    update = "60m"
+  }
 }
