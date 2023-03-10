@@ -35,6 +35,8 @@ skip_final_snapshot = true
 
 
 ## To-do
+- Parameter group
+- Option group
 - Enhanced Monitoring
 - Create CloudWatch Alarm
 - SNS Topic
