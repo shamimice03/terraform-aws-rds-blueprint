@@ -1,0 +1,3 @@
+- VPC
+- RDS Security group
+- RDS with `mysql` engine
