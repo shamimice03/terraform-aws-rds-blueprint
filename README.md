@@ -2,8 +2,8 @@
 ### Usage
 
 ```hcl
-module "rds_blueprint" {
-  source  = "shamimice03/rds_blueprint/aws"
+module "rds-blueprint" {
+  source  = "shamimice03/rds-blueprint/aws"
   
   # DB Subnet Group
   create_db_subnet_group = true
