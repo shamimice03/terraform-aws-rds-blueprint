@@ -1,7 +1,7 @@
 
 ### Usage
 
-```
+```hcl
 module "rds_blueprint" {
   source  = "shamimice03/rds_blueprint/aws"
   
