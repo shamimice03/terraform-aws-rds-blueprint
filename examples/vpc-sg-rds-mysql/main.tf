@@ -76,9 +76,7 @@ module "rds-blueprint" {
   max_allocated_storage = "10"
   
   # Connectivity
-  db_security_groups = [
-    "sg-00dd287a4b2efc40c"
-  ]
+  db_security_groups = [aws_security_group.rds_security_group.id]
   publicly_accessible = false
   database_port = 3306
   
