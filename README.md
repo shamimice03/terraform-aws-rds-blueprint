@@ -1,4 +1,6 @@
 
+### Usage
+
 ```
 module "rds_blueprint" {
   source  = "shamimice03/rds_blueprint/aws"
@@ -31,7 +33,11 @@ module "rds_blueprint" {
   backup_window = "03:00-05:00"
   maintenance_window = "Sat:05:00-Sat:07:00"
   deletion_protection = false
+  
+  # Monitoring
   enabled_cloudwatch_logs_exports = ["audit", "error"]
+  
+  # Others
   apply_immediately = true
   delete_automated_backups = true
   skip_final_snapshot = true
