@@ -15,13 +15,12 @@ multi_az                            = true
 engine                              = "mysql"
 engine_version                      = "8.0.28"
 instance_class                      = "db.t3.micro"
-
 # Storage
-storage_type                        = "gp2"
-allocated_storage                   = "50"
+storage_type      = "gp2"
+allocated_storage = "50"
 # To enable storage autoscaling `max_allocated_storage` 
 # Must be greater than or equal to allocated_storage or 0 to disable Storage Autoscaling.
-max_allocated_storage               = "50"
+max_allocated_storage = "50"
 
 db_security_groups = [
   "sg-0f95984096003b7f5"
