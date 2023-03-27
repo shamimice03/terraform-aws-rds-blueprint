@@ -14,6 +14,6 @@ terraform {
   }
 }
 
-provider "aws" {
-  profile = "terraform-user"
-}
+# provider "aws" {
+#   profile = "terraform-user"
+# }
