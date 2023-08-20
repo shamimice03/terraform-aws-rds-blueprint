@@ -2,7 +2,7 @@
 ### Usage
 
 ```hcl
-module "rds-blueprint" {
+module "rds" {
   source  = "shamimice03/rds-blueprint/aws"
   
   # DB Subnet Group
