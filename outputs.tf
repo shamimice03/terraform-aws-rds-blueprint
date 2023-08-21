@@ -13,8 +13,8 @@ output "db_instance_port" {
   value       = aws_db_instance.this.port
 }
 
-output "db_instance_id" {
-  description = "The name of the initial databased"
+output "db_name" {
+  description = "Name of the initial database"
   value       = aws_db_instance.this.db_name
 }
 

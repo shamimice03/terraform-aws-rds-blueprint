@@ -154,5 +154,6 @@ No modules.
 | <a name="output_db_instance_storage_type"></a> [db\_instance\_storage\_type](#output\_db\_instance\_storage\_type) | The storage type for the DB instance. |
 | <a name="output_db_instance_subnet_group"></a> [db\_instance\_subnet\_group](#output\_db\_instance\_subnet\_group) | The name of the DB subnet group associated with the DB instance. |
 | <a name="output_db_instance_username"></a> [db\_instance\_username](#output\_db\_instance\_username) | The master username for the database |
+| <a name="output_db_name"></a> [db\_name](#output\_db\_name) | Name of the initial database |
 | <a name="output_db_subnet_group_subnets"></a> [db\_subnet\_group\_subnets](#output\_db\_subnet\_group\_subnets) | The IDs of the subnets associated with the subnet group for the created RDS database instance |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
