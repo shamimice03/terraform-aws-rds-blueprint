@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.0.3...v1.1.0) (2023-08-21)
+
+
+### Features
+
+* **aws-provider-version:** updated aws provider version ([19ce2fb](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/19ce2fb91e6ac80e95e080f51120ab2dfa4bd56d))
+
 ### [1.0.2](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.0.1...v1.0.2) (2023-08-21)
 
 
