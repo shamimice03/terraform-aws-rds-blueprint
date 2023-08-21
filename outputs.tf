@@ -13,6 +13,11 @@ output "db_instance_port" {
   value       = aws_db_instance.this.port
 }
 
+output "db_instance_id" {
+  description = "The name of the initial databased"
+  value       = aws_db_instance.this.db_name
+}
+
 output "db_instance_security_groups" {
   description = "A list of security group IDs associated with the DB instance."
   value       = aws_db_instance.this.vpc_security_group_ids
