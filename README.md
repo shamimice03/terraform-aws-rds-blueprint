@@ -134,11 +134,12 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_db_instance_address"></a> [db\_instance\_address](#output\_db\_instance\_address) | The hostname of the RDS instance. |
 | <a name="output_db_instance_arn"></a> [db\_instance\_arn](#output\_db\_instance\_arn) | The arn of RDS instance |
 | <a name="output_db_instance_availability_zone"></a> [db\_instance\_availability\_zone](#output\_db\_instance\_availability\_zone) | The availability zone of the RDS instance |
 | <a name="output_db_instance_backup_retention_period"></a> [db\_instance\_backup\_retention\_period](#output\_db\_instance\_backup\_retention\_period) | The number of days to retain automated backups for the DB instance. |
 | <a name="output_db_instance_backup_window"></a> [db\_instance\_backup\_window](#output\_db\_instance\_backup\_window) | The backup window for the DB instance. |
-| <a name="output_db_instance_endpoint"></a> [db\_instance\_endpoint](#output\_db\_instance\_endpoint) | The DNS address of the DB instance. |
+| <a name="output_db_instance_endpoint"></a> [db\_instance\_endpoint](#output\_db\_instance\_endpoint) | The connection endpoint in address:port format. |
 | <a name="output_db_instance_engine"></a> [db\_instance\_engine](#output\_db\_instance\_engine) | The name of the database engine to be used for this DB instance. |
 | <a name="output_db_instance_engine_version"></a> [db\_instance\_engine\_version](#output\_db\_instance\_engine\_version) | The version of the database engine to be used for this DB instance. |
 | <a name="output_db_instance_id"></a> [db\_instance\_id](#output\_db\_instance\_id) | The unique identifier for the DB instance. |
