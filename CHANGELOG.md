@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.1.1](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.1.0...v1.1.1) (2023-08-22)
+
+
+### Bug Fixes
+
+* **output-update:** updated outputs ([8c81e4e](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/8c81e4ef722c22187ea6eb14af7978feb449a8f5))
+
 ## [1.1.0](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.0.3...v1.1.0) (2023-08-21)
 
 
