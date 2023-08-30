@@ -61,6 +61,11 @@ module "rds" {
   delete_automated_backups = true
   skip_final_snapshot = true
 
+  tags = {
+    "DB_ID" : "test-db-1",
+    "ENV" : "Dev"
+  }
+
 }
 ```
 
