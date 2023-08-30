@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.1.3](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.1.2...v1.1.3) (2023-08-30)
+
+
+### Bug Fixes
+
+* **min version:** updated min version of terraform ([930d90f](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/930d90f93d0735addfb308885b22279981b01f6e)), closes [#6](https://github.com/shamimice03/terraform-aws-rds-blueprint/issues/6)
+* **min version:** updated min version of terraform ([4cd4eb3](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/4cd4eb31c3ee19ea96d9794c6c7b537875c4a43d))
+
 ### [1.1.2](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.1.1...v1.1.2) (2023-08-30)
 
 
