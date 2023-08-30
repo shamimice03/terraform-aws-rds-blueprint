@@ -4,7 +4,7 @@
 ```hcl
 module "rds" {
   source  = "shamimice03/rds-blueprint/aws"
-  
+
   # DB Subnet Group
   create_db_subnet_group = true
   db_subnet_group_name = "db-subnet-group"
@@ -13,49 +13,49 @@ module "rds" {
       "subnet-0cb2441580936fb80",
       "subnet-0a698f3bc84f29ce8"
   ]
-  
+
   # Identify DB instance
   db_identifier = "test-db-1"
 
   # Create Initial Database
   db_name = "mydb"
-  
+
   # Credentials Settings
   db_master_username = "Admin"
   db_master_password = "Superadmin123"
   iam_database_authentication_enabled = true
-  
+
   # Availability and durability
   multi_az = false
-  
+
   # Engine options
   engine = "mysql"
   engine_version = "8.0"
-  
+
   # DB Instance configurations
   instance_class = "db.t3.micro"
-  
+
   # Storage
   storage_type = "gp2"
   allocated_storage = "10"
   max_allocated_storage = "10"
-  
+
   # Connectivity
   db_security_groups = [
     "sg-00dd287a4b2efc40c"
   ]
   publicly_accessible = false
   database_port = 3306
-  
+
   # Backup and Maintenance
   backup_retention_period = 7
   backup_window = "03:00-05:00"
   maintenance_window = "Sat:05:00-Sat:07:00"
   deletion_protection = false
-  
+
   # Monitoring
   enabled_cloudwatch_logs_exports = ["audit", "error"]
-  
+
   # Others
   apply_immediately = true
   delete_automated_backups = true
@@ -82,7 +82,7 @@ module "rds" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.13.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.14.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.5.1 |
 
 ## Modules
@@ -102,7 +102,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_allocated_storage"></a> [allocated\_storage](#input\_allocated\_storage) | The allocated storage in gigabytes | `string` | `"10"` | no |
-| <a name="input_apply_immediately"></a> [apply\_immediately](#input\_apply\_immediately) | Specifies whether any database modifications are applied immediately, <br>  or during the next maintenance window. | `bool` | `false` | no |
+| <a name="input_apply_immediately"></a> [apply\_immediately](#input\_apply\_immediately) | Specifies whether any database modifications are applied immediately,<br>  or during the next maintenance window. | `bool` | `false` | no |
 | <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | The number of days to retain automated backups | `number` | `0` | no |
 | <a name="input_backup_window"></a> [backup\_window](#input\_backup\_window) | Must not overlap with maintenance\_window | `string` | `null` | no |
 | <a name="input_create_db_subnet_group"></a> [create\_db\_subnet\_group](#input\_create\_db\_subnet\_group) | Whether to create db a subnet group | `bool` | `false` | no |
@@ -117,18 +117,19 @@ No modules.
 | <a name="input_db_subnets"></a> [db\_subnets](#input\_db\_subnets) | List of DB subnets | `list(any)` | `[]` | no |
 | <a name="input_delete_automated_backups"></a> [delete\_automated\_backups](#input\_delete\_automated\_backups) | Specifies whether to remove automated backups immediately after the DB instance is deleted. | `bool` | `true` | no |
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Protect database from accidental deletion | `bool` | `false` | no |
-| <a name="input_enabled_cloudwatch_logs_exports"></a> [enabled\_cloudwatch\_logs\_exports](#input\_enabled\_cloudwatch\_logs\_exports) | Set of log types to enable for exporting to CloudWatch logs. <br>  If omitted, no logs will be exported. Valid values (depending on engine). <br>  MySQL and MariaDB: audit, error, general, slowquery.<br>  PostgreSQL: postgresql, upgrade. <br>  MSSQL: agent , error. <br>  Oracle: alert, audit, listener, trace. | `list(string)` | `[]` | no |
+| <a name="input_enabled_cloudwatch_logs_exports"></a> [enabled\_cloudwatch\_logs\_exports](#input\_enabled\_cloudwatch\_logs\_exports) | Set of log types to enable for exporting to CloudWatch logs.<br>  If omitted, no logs will be exported. Valid values (depending on engine).<br>  MySQL and MariaDB: audit, error, general, slowquery.<br>  PostgreSQL: postgresql, upgrade.<br>  MSSQL: agent , error.<br>  Oracle: alert, audit, listener, trace. | `list(string)` | `[]` | no |
 | <a name="input_engine"></a> [engine](#input\_engine) | The database engine to be used for the RDS instance. | `string` | `null` | no |
 | <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | The version of the database engine to be used for the RDS instance. | `string` | `null` | no |
-| <a name="input_iam_database_authentication_enabled"></a> [iam\_database\_authentication\_enabled](#input\_iam\_database\_authentication\_enabled) | Specifies whether or not the mappings of AWS Identity and <br>  Access Management (IAM) accounts to database accounts are enabled | `bool` | `false` | no |
+| <a name="input_iam_database_authentication_enabled"></a> [iam\_database\_authentication\_enabled](#input\_iam\_database\_authentication\_enabled) | Specifies whether or not the mappings of AWS Identity and<br>  Access Management (IAM) accounts to database accounts are enabled | `bool` | `false` | no |
 | <a name="input_instance_class"></a> [instance\_class](#input\_instance\_class) | The instance class for the RDS instance. | `string` | `null` | no |
 | <a name="input_maintenance_window"></a> [maintenance\_window](#input\_maintenance\_window) | The window to perform maintenance in. | `string` | `null` | no |
-| <a name="input_max_allocated_storage"></a> [max\_allocated\_storage](#input\_max\_allocated\_storage) | When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance. <br>  Configuring this will automatically ignore differences to allocated\_storage. <br>  Must be greater than or equal to allocated\_storage or 0 to disable Storage Autoscaling. | `string` | `"0"` | no |
+| <a name="input_max_allocated_storage"></a> [max\_allocated\_storage](#input\_max\_allocated\_storage) | When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance.<br>  Configuring this will automatically ignore differences to allocated\_storage.<br>  Must be greater than or equal to allocated\_storage or 0 to disable Storage Autoscaling. | `string` | `"0"` | no |
 | <a name="input_multi_az"></a> [multi\_az](#input\_multi\_az) | Determine if the RDS instance is multi-AZ | `bool` | `false` | no |
 | <a name="input_publicly_accessible"></a> [publicly\_accessible](#input\_publicly\_accessible) | Determine if the RDS instance is publicly\_accessible | `bool` | `false` | no |
 | <a name="input_random_password_length"></a> [random\_password\_length](#input\_random\_password\_length) | Length of the random password | `number` | `16` | no |
 | <a name="input_skip_final_snapshot"></a> [skip\_final\_snapshot](#input\_skip\_final\_snapshot) | Determines whether a final DB snapshot is created before the DB instance is deleted. | `bool` | `true` | no |
 | <a name="input_storage_type"></a> [storage\_type](#input\_storage\_type) | Choose storage type from - gp2, gp3, io1 | `string` | `"gp2"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to resources | `map(string)` | `{}` | no |
 
 ## Outputs
 

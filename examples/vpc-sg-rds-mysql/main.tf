@@ -15,8 +15,8 @@ module "vpc" {
   enable_single_nat_gateway = false
 
   tags = {
-    "Team" = "Platform-Team"
-    "Env"  = "prod"
+    "Team" = "platform-team"
+    "Env"  = "dev"
   }
 
 }
@@ -42,7 +42,7 @@ resource "aws_security_group" "rds_security_group" {
 
 
 module "rds" {
-  source = "shamimice03/rds-blueprint/aws"
+  source = "../../"
 
   # DB Subnet Group
   create_db_subnet_group = true
@@ -94,4 +94,9 @@ module "rds" {
   delete_automated_backups = true
   skip_final_snapshot      = true
 
+  # Tags
+  tags = merge(
+    { "DB_ID" : "test-db-1" },
+    var.tags,
+  )
 }

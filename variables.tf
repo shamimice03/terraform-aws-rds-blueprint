@@ -56,7 +56,7 @@ variable "db_master_password" {
 
 variable "iam_database_authentication_enabled" {
   description = <<EOF
-  Specifies whether or not the mappings of AWS Identity and 
+  Specifies whether or not the mappings of AWS Identity and
   Access Management (IAM) accounts to database accounts are enabled
   EOF
   type        = bool
@@ -101,8 +101,8 @@ variable "allocated_storage" {
 
 variable "max_allocated_storage" {
   description = <<EOF
-  When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance. 
-  Configuring this will automatically ignore differences to allocated_storage. 
+  When configured, the upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+  Configuring this will automatically ignore differences to allocated_storage.
   Must be greater than or equal to allocated_storage or 0 to disable Storage Autoscaling.
   EOF
   type        = string
@@ -153,11 +153,11 @@ variable "deletion_protection" {
 
 variable "enabled_cloudwatch_logs_exports" {
   description = <<EOF
-  Set of log types to enable for exporting to CloudWatch logs. 
-  If omitted, no logs will be exported. Valid values (depending on engine). 
+  Set of log types to enable for exporting to CloudWatch logs.
+  If omitted, no logs will be exported. Valid values (depending on engine).
   MySQL and MariaDB: audit, error, general, slowquery.
-  PostgreSQL: postgresql, upgrade. 
-  MSSQL: agent , error. 
+  PostgreSQL: postgresql, upgrade.
+  MSSQL: agent , error.
   Oracle: alert, audit, listener, trace.
   EOF
   type        = list(string)
@@ -166,7 +166,7 @@ variable "enabled_cloudwatch_logs_exports" {
 
 variable "apply_immediately" {
   description = <<EOF
-  Specifies whether any database modifications are applied immediately, 
+  Specifies whether any database modifications are applied immediately,
   or during the next maintenance window.
   EOF
   type        = bool
@@ -185,10 +185,8 @@ variable "skip_final_snapshot" {
   default     = true
 }
 
-
-
-
-
-
-
-
+variable "tags" {
+  description = "Tags to apply to resources"
+  type        = map(string)
+  default     = {}
+}
