@@ -71,4 +71,10 @@ resource "aws_db_instance" "this" {
     delete = "60m"
     update = "60m"
   }
+
+  # Tags
+  tags = merge(
+    { "DB_ID" : var.db_identifier },
+    var.tags,
+  )
 }

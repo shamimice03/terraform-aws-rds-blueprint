@@ -12,13 +12,13 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.13.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.14.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_rds"></a> [rds](#module\_rds) | shamimice03/rds-blueprint/aws | n/a |
+| <a name="module_rds"></a> [rds](#module\_rds) | ../../ | n/a |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | shamimice03/vpc/aws | n/a |
 
 ## Resources
@@ -29,7 +29,9 @@
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_tags"></a> [tags](#input\_tags) | General tags to apply to resources created | `map(string)` | <pre>{<br>  "Env": "dev",<br>  "Project_name": "aws-rds",<br>  "Team": "platform-team"<br>}</pre> | no |
 
 ## Outputs
 
