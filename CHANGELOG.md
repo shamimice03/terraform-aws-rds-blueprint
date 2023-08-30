@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.1.2](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.1.1...v1.1.2) (2023-08-30)
+
+
+### Bug Fixes
+
+* **tags-docs:** fixed tags and docs ([a46c79b](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/a46c79bbc05fb1d9e64afd6c10c44448b1eba3b5))
+* **tags-docs:** fixed tags and docs ([62a0f7d](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/62a0f7d90812e285c702789f62b0086ac82a0cb1))
+* **tags:** tag option added ([8015539](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/8015539cf98d24fc5528ae91111c4d6b75f85e37))
+* **tags:** tag option added ([f86d0ba](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/f86d0badba85a6f55c0d4634652e808f1503c255))
+
 ### [1.1.1](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.1.0...v1.1.1) (2023-08-22)
 
 
