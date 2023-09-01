@@ -47,10 +47,13 @@ resource "aws_db_instance" "this" {
   max_allocated_storage = var.max_allocated_storage
 
   # Connectivity
-  db_subnet_group_name   = var.create_db_subnet_group ? aws_db_subnet_group.db_subnet_group[0].id : null
+  db_subnet_group_name   = var.create_db_subnet_group ? aws_db_subnet_group.db_subnet_group[0].id : var.db_subnet_group_name
   vpc_security_group_ids = var.db_security_groups
   publicly_accessible    = var.publicly_accessible
   port                   = var.database_port
+
+  # AZ for the DB instance
+  availability_zone = var.availability_zone
 
   # Backup and Maintenance
   backup_retention_period = var.backup_retention_period
@@ -60,6 +63,14 @@ resource "aws_db_instance" "this" {
 
   # Monitoring
   enabled_cloudwatch_logs_exports = var.enabled_cloudwatch_logs_exports
+
+  # Version upgrade
+  allow_major_version_upgrade = var.allow_major_version_upgrade
+  auto_minor_version_upgrade  = var.auto_minor_version_upgrade
+
+  # Encrytion
+  storage_encrypted = var.storage_encrypted
+  kms_key_id        = var.kms_key_id
 
   # Others
   apply_immediately        = var.apply_immediately
@@ -71,6 +82,9 @@ resource "aws_db_instance" "this" {
     delete = "60m"
     update = "60m"
   }
+
+  # Read replica option - Following var specifies that this resource is a Replicate database,
+  replicate_source_db = var.replicate_source_db
 
   # Tags
   tags = merge(

@@ -102,7 +102,7 @@ output "db_instance_password" {
 
 output "db_subnet_group_subnets" {
   description = "The IDs of the subnets associated with the subnet group for the created RDS database instance"
-  value       = aws_db_subnet_group.db_subnet_group[0].subnet_ids
+  value       = try(aws_db_subnet_group.db_subnet_group[0].subnet_ids,null)
 }
 
 output "db_instance_arn" {
