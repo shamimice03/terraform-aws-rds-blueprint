@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.1.3...v1.2.0) (2023-09-03)
+
+
+### Features
+
+* **read-replica:** read replica feature added ([ace6f32](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/ace6f32eedc84a70c0d676628dbd6091d5e93c31))
+* **read-replica:** read-replica feature added ([26a5011](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/26a50112684c2fbc181875b3ac80c6aecdc947d0))
+
 ### [1.1.3](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.1.2...v1.1.3) (2023-08-30)
 
 
