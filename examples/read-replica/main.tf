@@ -63,6 +63,12 @@ locals {
   apply_immediately                   = true
   delete_automated_backups            = true
   skip_final_snapshot                 = true
+
+  general_tags = {
+    "Project_name" = "aws-rds"
+    "Team"         = "platform-team"
+    "Env"          = "dev"
+  }
 }
 
 module "primary_db" {
@@ -127,7 +133,7 @@ module "primary_db" {
   # Tags
   tags = merge(
     { "DB_ID" : local.db_identifier },
-    var.tags,
+    local.general_tags,
   )
 }
 
@@ -183,7 +189,7 @@ module "replica_db" {
   # Tags
   tags = merge(
     { "DB_ID" : local.replica_db_identifier },
-    var.tags,
+    local.general_tags,
   )
 
   depends_on = [module.primary_db]

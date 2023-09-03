@@ -32,9 +32,7 @@
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_tags"></a> [tags](#input\_tags) | General tags to apply to resources created | `map(string)` | <pre>{<br>  "Env": "dev",<br>  "Project_name": "aws-rds",<br>  "Team": "platform-team"<br>}</pre> | no |
+No inputs.
 
 ## Outputs
 
