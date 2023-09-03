@@ -226,3 +226,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "ca_cert_identifier" {
+  description = "The identifier of the CA certificate for the DB instance"
+  type        = string
+  default     = "rds-ca-ecc384-g1"
+}

@@ -72,6 +72,9 @@ resource "aws_db_instance" "this" {
   storage_encrypted = var.storage_encrypted
   kms_key_id        = var.kms_key_id
 
+  # CA Cert Identfifier
+  ca_cert_identifier = var.ca_cert_identifier
+
   # Others
   apply_immediately        = var.apply_immediately
   delete_automated_backups = var.delete_automated_backups
