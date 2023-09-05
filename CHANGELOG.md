@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.2.1](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.2.0...v1.2.1) (2023-09-05)
+
+
+### Bug Fixes
+
+* **random-password:** fixed random passward generation option ([0ef4951](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/0ef4951ed994bffc11c40634d77af3d0dd2c5df2))
+* **random-password:** fixed random password generation option ([3b5d6af](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/3b5d6af092e41b5cb44ce3ced5302cff23fe83b9))
+
 ## [1.2.0](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.1.3...v1.2.0) (2023-09-03)
 
 
