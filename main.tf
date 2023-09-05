@@ -16,7 +16,7 @@ resource "aws_db_subnet_group" "db_subnet_group" {
 resource "random_password" "db_master_password" {
   count   = var.db_master_password == null ? 1 : 0
   length  = var.random_password_length
-  special = true
+  special = false
 }
 
 resource "aws_db_instance" "this" {
