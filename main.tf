@@ -1,9 +1,9 @@
 locals {
-  password = var.db_master_password == null ? random_password.db_master_password[0].result : var.db_master_password
+  password = (var.create && var.db_master_password == null) ? random_password.db_master_password[0].result : var.db_master_password
 }
 
 resource "aws_db_subnet_group" "db_subnet_group" {
-  count       = var.create_db_subnet_group ? 1 : 0
+  count       = var.create && var.create_db_subnet_group ? 1 : 0
   name        = coalesce(var.db_subnet_group_name, var.db_identifier)
   description = coalesce(var.db_subnet_group_description, format("%s-subnet-group", var.db_identifier))
   subnet_ids  = var.db_subnets
@@ -14,12 +14,15 @@ resource "aws_db_subnet_group" "db_subnet_group" {
 }
 
 resource "random_password" "db_master_password" {
-  count   = var.db_master_password == null ? 1 : 0
+  count   = var.create && var.db_master_password == null ? 1 : 0
   length  = var.random_password_length
   special = false
 }
 
 resource "aws_db_instance" "this" {
+
+  count = var.create ? 1 : 0
+
   # Identify DB instance
   identifier = var.db_identifier
 

@@ -1,3 +1,8 @@
+variable "create" {
+  description = "Whether to create resources"
+  type        = bool
+  default     = true
+}
 
 variable "create_db_subnet_group" {
   description = "Whether to create db a subnet group"

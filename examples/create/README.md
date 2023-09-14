@@ -17,6 +17,8 @@
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_rds"></a> [rds](#module\_rds) | ../../ | n/a |
+| <a name="module_rds_2"></a> [rds\_2](#module\_rds\_2) | ../../ | n/a |
+| <a name="module_rds_3"></a> [rds\_3](#module\_rds\_3) | ../../ | n/a |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | shamimice03/vpc/aws | n/a |
 
 ## Resources
