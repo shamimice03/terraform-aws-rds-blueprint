@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.2.1...v1.3.0) (2023-09-14)
+
+
+### Features
+
+* **create-option:** implemented create option ([8bedd8f](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/8bedd8f42edc7601eb1d8f7f4dd974229c4ace0f))
+* **create-option:** implemented create option ([590be64](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/590be640853d8482070260a6d1604137faa9928e))
+* **create-option:** implemented create option ([220f93d](https://github.com/shamimice03/terraform-aws-rds-blueprint/commit/220f93db59b350f4c7221cc9abc80e3df29179ef))
+
 ### [1.2.1](https://github.com/shamimice03/terraform-aws-rds-blueprint/compare/v1.2.0...v1.2.1) (2023-09-05)
 
 
