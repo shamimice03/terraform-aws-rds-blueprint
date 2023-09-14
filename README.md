@@ -113,6 +113,7 @@ No modules.
 | <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | The number of days to retain automated backups | `number` | `0` | no |
 | <a name="input_backup_window"></a> [backup\_window](#input\_backup\_window) | Must not overlap with maintenance\_window | `string` | `null` | no |
 | <a name="input_ca_cert_identifier"></a> [ca\_cert\_identifier](#input\_ca\_cert\_identifier) | The identifier of the CA certificate for the DB instance | `string` | `"rds-ca-ecc384-g1"` | no |
+| <a name="input_create"></a> [create](#input\_create) | Whether to create resources | `bool` | `true` | no |
 | <a name="input_create_db_subnet_group"></a> [create\_db\_subnet\_group](#input\_create\_db\_subnet\_group) | Whether to create db a subnet group | `bool` | `false` | no |
 | <a name="input_database_port"></a> [database\_port](#input\_database\_port) | The port on which the DB accepts connections. | `number` | `null` | no |
 | <a name="input_db_identifier"></a> [db\_identifier](#input\_db\_identifier) | The name of the DB instance identifier. | `string` | `null` | no |
@@ -147,18 +148,18 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_db_instance_address"></a> [db\_instance\_address](#output\_db\_instance\_address) | The hostname of the RDS instance |
-| <a name="output_db_instance_arn"></a> [db\_instance\_arn](#output\_db\_instance\_arn) | The arn of RDS instance |
+| <a name="output_db_instance_arn"></a> [db\_instance\_arn](#output\_db\_instance\_arn) | The ARN of RDS instance |
 | <a name="output_db_instance_availability_zone"></a> [db\_instance\_availability\_zone](#output\_db\_instance\_availability\_zone) | The availability zone of the RDS instance |
 | <a name="output_db_instance_backup_retention_period"></a> [db\_instance\_backup\_retention\_period](#output\_db\_instance\_backup\_retention\_period) | The number of days to retain automated backups for the DB instance |
 | <a name="output_db_instance_backup_window"></a> [db\_instance\_backup\_window](#output\_db\_instance\_backup\_window) | The backup window for the DB instance |
 | <a name="output_db_instance_class"></a> [db\_instance\_class](#output\_db\_instance\_class) | The instance class of the DB instance |
 | <a name="output_db_instance_endpoint"></a> [db\_instance\_endpoint](#output\_db\_instance\_endpoint) | The connection endpoint in address:port format |
-| <a name="output_db_instance_engine"></a> [db\_instance\_engine](#output\_db\_instance\_engine) | The name of the database engine to be used for this DB instance |
-| <a name="output_db_instance_engine_version"></a> [db\_instance\_engine\_version](#output\_db\_instance\_engine\_version) | The version of the database engine to be used for this DB instance |
+| <a name="output_db_instance_engine"></a> [db\_instance\_engine](#output\_db\_instance\_engine) | The name of the database engine to be used for this[0] DB instance |
+| <a name="output_db_instance_engine_version"></a> [db\_instance\_engine\_version](#output\_db\_instance\_engine\_version) | The version of the database engine to be used for this[0] DB instance |
 | <a name="output_db_instance_id"></a> [db\_instance\_id](#output\_db\_instance\_id) | The unique identifier for the DB instance |
 | <a name="output_db_instance_maintenance_window"></a> [db\_instance\_maintenance\_window](#output\_db\_instance\_maintenance\_window) | The maintenance window for the DB instance |
 | <a name="output_db_instance_multi_az"></a> [db\_instance\_multi\_az](#output\_db\_instance\_multi\_az) | Indicates whether the DB instance is configured with Multi-AZ deployment |
-| <a name="output_db_instance_password"></a> [db\_instance\_password](#output\_db\_instance\_password) | The database password (this password might be old, because Terraform will not track password after initial creation) |
+| <a name="output_db_instance_password"></a> [db\_instance\_password](#output\_db\_instance\_password) | The database password (this[0] password might be old, because Terraform will not track password after initial creation) |
 | <a name="output_db_instance_port"></a> [db\_instance\_port](#output\_db\_instance\_port) | The port number on which the DB instance accepts connections |
 | <a name="output_db_instance_publicly_accessible"></a> [db\_instance\_publicly\_accessible](#output\_db\_instance\_publicly\_accessible) | Indicates whether the DB instance is publicly accessible |
 | <a name="output_db_instance_security_groups"></a> [db\_instance\_security\_groups](#output\_db\_instance\_security\_groups) | A list of security group IDs associated with the DB instance |

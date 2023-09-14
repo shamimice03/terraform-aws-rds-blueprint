@@ -18,7 +18,6 @@ module "vpc" {
     "Team" = "platform-team"
     "Env"  = "dev"
   }
-
 }
 
 resource "aws_security_group" "rds_security_group" {
